@@ -1,0 +1,29 @@
+<% extends 'article.html.skin' %>
+
+<% subskin 'headScripts' %>
+<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/toggle.js"></script>
+
+<% subskin 'content' %>
+<div id="heading">
+  <h1>Edit Article "<% article.title %>"</h1>
+</div>
+
+<form action="/blog/<% params.id %>?method=PUT" method="post" accept-charset="utf-8">
+  <input type="hidden" name="id" value="<% id %>" />
+  <p>
+    <label for="text">Text:</label><br />
+    <textarea name="text" id="text" rows="18" cols="60"><% article.text %></textarea><br />
+    <small>
+      (<a href="#" id="toggle">Some Markdown is fine.</a>)
+    </small>
+  </p>
+  <p id="to-toggle" style="display: none;">
+    <a href="http://daringfireball.net/projects/markdown/basics" target="_blank">Markdown</a> is a <a href="http://en.wikipedia.org/wiki/Lightweight_markup_language" target="_blank">lightweight markup language</a>, originally created by John Gruber and Aaron Swartz, which aims for maximum readability and "publishability" of both its input and output forms, taking many cues from existing conventions for marking up plain text in email.
+  </p>
+
+  <p>
+    <a href="show?id=<% id %>">&laquo; Cancel</a>&nbsp;
+    <input type="submit" name="save" value="OK" />
+  </p>
+</form>

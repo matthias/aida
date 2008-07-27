@@ -1,0 +1,20 @@
+<% extends 'article.html.skin' %>
+
+<% subskin 'content' %>
+<div id="heading">
+  <h1><% article.title | titleize %></h1>
+</div>
+
+<div id="article-content">
+  <p>
+    <% article.text %>
+  </p>
+
+  <p>
+    <small>
+      <i>posted: BUG!</i><br />
+      <a href="/blog/<% params.id %>/edit">&raquo; Edit this article</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/blog/<% params.id %>/delete">&raquo; Delete this article</a>
+    </small>
+  </p>
+
+</div>

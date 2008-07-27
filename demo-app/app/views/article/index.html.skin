@@ -1,0 +1,26 @@
+<% extends 'article.html.skin' %>
+
+<% subskin 'content' %>
+<div id="heading">
+  <% html.h1 "Welcome to AIDA Blog" %>
+</div>
+
+<p id="create-link">
+  <strong><a href="/blog/new">&raquo; Create a new article</a></strong>
+</p>
+
+<div id="articles">
+  <% list %>
+</div>
+
+<% subskin 'listItem' %>
+<div class="article-list-item">
+  <h2><a href="<% href %>"><% title %></a></h2>
+  <% html.h2 <% title %> %>
+  <p>
+    <% text %>
+  </p>
+  <p>
+    <small><i>posted: <% createTime %></i></small>
+  </p>
+</div>

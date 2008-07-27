@@ -1,0 +1,49 @@
+Aida - Where Helma Goes to Work
+===============================
+
+Aida should become a RubyOnRais style MVC framework, based on helma-ng.
+As of today (June 3rd, 2008) it supports routing, controllers, helpers, views (skins, EcmaScript templates, JavaScript Templates) 
+and it includes the Hibernate ORM/persistence layer from robi.
+
+You will find some basic documentation at /aida/doc/modules/aida
+
+How to Run "demo-app"
+=====================
+
+demo-app contains all you need to run the examples. As it also includes robi's orm mapper
+you need to run mysql and create a database.
+
+1. Start your MySQL server and create the DB & user with:
+   demo-app/app/orm/db.sql
+
+2. Issue, e.g., the following command directory:
+
+   java -jar helma-ng/run.jar sanbox/aida/demo-app/ sanbox/aida/modules/
+   # modify the pathes according to your needs
+
+3. Then point your browser to:
+
+   http://localhost:8080/
+
+
+Description
+===========
+
+The demo-app also includes a library for generating xml (and html) and a library
+that wraps the twitter api.
+
+ * /blog ... A simple blog app, including robi's hibernate module.
+ * /twitter ... Using the twitter API and skins.
+ * /say ... Just a place where i test routes, and controllers (broken).
+
+Watch the URLs as you browse the demo apps. You will find the routes in _/app/routes_
+
+All modules are located at _/modules/adia_. You don't have to copy them into your helma installation, they are loaded in _main.js_ by calling _importModule("aida.appLoader");_
+
+
+Dependencies
+============
+
+Sun Java/JVM: http://java.sun.com/
+Helma NG:     http://dev.helma.org/ng/
+MySQL:        http://dev.mysql.com/

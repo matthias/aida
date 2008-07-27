@@ -1,0 +1,2 @@
+
+Hello World! I'm a <% controller.__name__ %> <% 10.minutes.ago %> called with id: <% param.id %>.

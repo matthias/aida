@@ -1,0 +1,10 @@
+<h1><%= hello %></h1>
+<p>This is Aida</p>
+<ul>
+  <li><a href="/blog">/blog</a> A simple blog app, including robi's hibernate module.</li>
+  <li><a href="/twitter">/twitter</a> Using the twitter API and skins.</li>
+  <li><a href="/say">/say</a> Just a place where i test routes, and controllers (broken).</li>
+</ul>
+<p>Watch the URLs as you browse the demo apps. You will find the routes in <tt>/app/routes</tt></p>
+<p>All modules are located at <tt>/modules/adia</tt>. You don't have to copy them into your helma installation, they are loaded in <tt>main.js</tt> by calling <tt>importModule("modules.appLoader");</tt></p>
+<p>This page is using EcmaScript Templates. You can also use skins or just plain .html files.</p>

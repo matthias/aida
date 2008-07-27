@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class entity-name="Article" table="ARTICLES">
+
+        <id name="id"
+            column="ARTICLE_ID"
+            type="integer">
+            <generator class="org.hibernate.id.IncrementGenerator" />
+        </id>
+
+        <property name="title"
+            column="ARTICLE_TITLE"
+            type="string" />
+
+        <property name="text"
+            column="ARTICLE_TEXT"
+            type="text" />
+
+        <property name="createTime"
+            column="ARTICLE_CREATE_TIME"
+            type="timestamp" />
+
+        <property name="updateTime"
+            column="ARTICLE_UPDATE_TIME"
+            type="timestamp" />
+
+    </class>
+
+</hibernate-mapping>

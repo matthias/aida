@@ -1,0 +1,4 @@
+
+config = {
+   templateRoot : "app/views"
+}

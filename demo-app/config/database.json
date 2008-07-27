@@ -1,0 +1,15 @@
+/* database configuration, using json */
+{
+  "development": "development_sqlite",
+  "development_mysql": {
+    "adapter": "mysql", 
+    "database": "depot_development", 
+    "username": "root", 
+    "password": "",
+    "host": "localhost"
+  },
+  "development_sqlite": {
+    "adapter": "sqlite", 
+    "dbfile": "my_db"
+  }
+}

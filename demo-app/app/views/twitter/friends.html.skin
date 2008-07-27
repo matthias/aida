@@ -1,0 +1,10 @@
+<h2>Status Messages by Friends of <% param.id %></h2>
+<div class="timeline">
+<% render 'status' on=<%controller.timeline%> as='status' %>
+</div>
+
+<% subskin 'status' %>
+<div class="twitter-status" id="twitter-status-<% status.id %>">
+  <p><img src="<% status.user.profile_image_url %>" alt="<% status.user.name %>" align="left"> <% status.text %></p>
+  <p style="clear:both;"><small>via <% status.source %> by <a href="http://www.twitter.com/<% status.user.screen_name %>"><% status.user.screen_name %></a> posted at <% status.created_at | dateFormat format="dd.MM.yyyy" %></small></p>
+</div>

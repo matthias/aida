@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Helma NG Blog - <% path %></title>
+    <link href="/static/favicon.png" rel="shortcut icon" type="image/png" />
+    <link rel="stylesheet" href="/static/styles.css" type="text/css" media="screen" title="Styles CSS" charset="utf-8">
+    <% render 'headScripts' %>
+  </head>
+
+  <body>
+    <% message prefix='<div id="message">' suffix='</div>' %>
+    <div id="logo">
+      <a href="/blog"><img src="/static/logo.png" alt="logo" /></a>
+    </div>
+    <% render 'content' %>
+  </body>
+</html>
+
+<% subskin 'content' %>
+Overwrite me.

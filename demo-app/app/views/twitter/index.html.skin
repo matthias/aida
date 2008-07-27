@@ -1,0 +1,6 @@
+<h1>Twitter API</h1>
+<h3>friends timeline</h3>
+<p>
+  pattern: http://localhost:8080/twitter/friends/{username}<br />
+  example: <a href="http://localhost:8080/twitter/friends/matix17">http://localhost:8080/twitter/friends/matix17</a>
+</p>
