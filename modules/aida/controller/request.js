@@ -40,7 +40,7 @@ logging.setConfig(getResource('config/environments/development/log4j.properties'
       if (!controller.beforeFiltersPass()) return;
       controller.callAction(req.route.handler);
       controller.applyAfterFilters();
-      controller.renderLayout();
+      // controller.renderLayout();
    }
    
    /**

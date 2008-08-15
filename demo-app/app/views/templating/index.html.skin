@@ -1,0 +1,7 @@
+<html>
+  <head><title><% title %></title></head>
+  <body>
+    <h1>Hello!</h1>
+    <% this.content %>
+  </body>
+</html>

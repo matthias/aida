@@ -11,8 +11,11 @@ importModule("helma.logging", "logging");
       try {
          if (!res.calledRender) this.render();
       } catch(err) {
-         if (err instanceof this.templating.NoTemplateFoundError)
-         res.write(err);
+         if (err instanceof this.templating.NoTemplateFoundError && this.content != null) {
+            res.write(this.content);
+         } else {
+            res.write(err);            
+         }
       }
    
    }
