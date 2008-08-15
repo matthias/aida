@@ -1,5 +1,6 @@
 importModule('helma.app', 'app');
 importModule('helma.rhino', 'rhino');
+importJar('mysql-connector-java-5.1.6-bin.jar');
 
 // this is just for convinience while developing/debugging aida - i will remove this in the future
 importModule("helma.shell", "shell");
@@ -33,8 +34,6 @@ global.handleRequest = function(req, res, session) {
    global.req = req;
    global.res = res;
    global.session = session;
-   logger.info("---------------------------------")
-   logger.info("---------------------------------")
    aida.controller.handleRequest("root");
 }
 

@@ -81,8 +81,7 @@
 
 importFromModule("formats", "Formats");
 importFromModule("config.environments.development.development", "config");
-
-importModule('templating')
+importModule("templating");
  
 importModule("helma.logging", "logging");
  
@@ -124,16 +123,13 @@ importModule("helma.logging", "logging");
          }
       } else {
          logger.debug("called function render() without specifying a template or content.");
-
-         // FIXME: template types should be moved to modules using a plugin/interface mechansim
-         var type = determineTemplateType.call(this, {action:action, format:req.route.format});
-         logger.debug("render() found template type " + type);
          
-         var renderer = templating.getRenderer(type);
-         if (renderer === undefined) {
-            throw templating.Exception(type);
-         }
-         templating.getRenderer(type).render(getTemplatePath.call(this, {action:action, type:type}), context);
+         templating.render({
+            controller : this.getShortName(),
+            action : action,
+            format : req.route.format
+         }, context);            
+         
       }
    }   
 
@@ -167,32 +163,13 @@ importModule("helma.logging", "logging");
       result = Object.extend(result, context || {});
       return result;
    }
-   
-   function determineTemplateType(options) {
-      var types = ["jstl", "este", "ejs", "skin", options.format];
-      for (var i=0; i<types.length; i++) {
-         if (getTemplateSource.call(this, Object.extend(options, {type:types[i]})).exists()) {
-            return types[i];
-         }
-      }
-      return;
-   }
-   
-   function getTemplateSource(options) {
-      return getResource(getTemplatePath.call(this, options));
-   }
-   
-   function getTemplatePath(options) {
-      var options = Object.extend({
-         action : "index",
-         controller : this.getShortName(),
-         format : "html",
-         type : "skin"
-      }, options || {});
-      var result = (config.templateRoot || "app/views") + '/' + options.controller + '/' + options.action + '.' + options.format + ((options.type != options.format) ? ('.' + options.type) : '');
-      return result;
-   }
+      
+   // ERROR Objects
 
+   function DoubleRenderError() {
+      this.toString = function() {
+         return "render() may just be called once."
+      }
+   }   
 
 }).call(this); 
- 

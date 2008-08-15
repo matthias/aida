@@ -9,6 +9,6 @@ function RootController() {
 
    this.ejs_action = function() {
       this.context.hello = "Hello World!";   
-   }  
-
+   }
+   
 }
