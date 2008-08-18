@@ -8,7 +8,13 @@ function TemplatingController() {
    }
    
    this.foo_action = function() {
-      
+      res.write("some buffer");
+      context.foo2 = "foooo 2";
+      render();
+   }
+   
+   this.customtemplate_action = function() {
+      render({ controller : "say", action : "hello" });
    }
    
    this.write_action = function() {

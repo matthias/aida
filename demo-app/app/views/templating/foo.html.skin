@@ -1,0 +1,6 @@
+
+Hi I'm Foo!
+
+<p>This is the content: <% content %>!!
+  
+<p><% foo2 %></p>
