@@ -16,9 +16,9 @@ you need to run mysql and create a database.
 1. Start your MySQL server and create the DB & user with:
    demo-app/app/orm/db.sql
 
-2. Issue, e.g., the following command directory:
+2. Issue, e.g., the following command from the aida directory:
 
-   java -jar helma-ng/run.jar sanbox/aida/demo-app/ sanbox/aida/modules/
+   aida> java -jar ~/helma/helma-ng/run.jar demo-app/ modules/
    # modify the pathes according to your needs
 
 3. Then point your browser to:
