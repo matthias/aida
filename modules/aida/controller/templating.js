@@ -17,10 +17,14 @@ importModule("helma.logging", "logging");
       if (!options) options = {};
       if (!options.type) options.type = determineTemplateType(options) || DEFAULT_TEMPLATE_TYPE;
       var templatePath = getTemplatePath(options);
+      logger.debug("templatePath:" + templatePath);
       if (!templateFileExists(templatePath)) {
          throw new NoTemplateFoundError(options);
       }
       var renderer = getRenderer(options.type);
+      logger.debug("renderer:" + renderer);
+      logger.debug("context:" + context);
+      
       if (renderer) {
          renderer.render(templatePath, context);         
       } else {

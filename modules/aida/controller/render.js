@@ -97,6 +97,7 @@ importModule("helma.logging", "logging");
       res.calledRender = true;
       var action = options.action || req.route.action;
       var context = prepareContext.call(controller, options.context);
+      res.pop(); // the current res.buffer is stored in context.content;
       delete options.context;
       if (options.layout !== undefined) controller.setLayout(options.layout);
       delete options.layout;
@@ -123,12 +124,11 @@ importModule("helma.logging", "logging");
          }
       } else {
          logger.debug("called function render() without specifying a template or content.");
-         
-         templating.render({
+         templating.render(Object.extend({
             controller : this.getShortName(),
             action : action,
             format : req.route.format
-         }, context);            
+         }, options), context);
          
       }
    }   
@@ -147,16 +147,16 @@ importModule("helma.logging", "logging");
       result = Object.extend(
          result,
          {
-            request : req.data,
-            controller : controller,
             "this" : controller,
+            controller : controller.prototype,
             flash : req.flash,
-            headers : req.headers, 
+            content : res.buffer,
             logger : logger, 
-            params : req.data, 
-            request : req, 
+            request : req,
+            params : req.data,
+            headers : req.headers, 
             response : res,
-            session : session 
+            session : session
          },
          this.context || {}
       );

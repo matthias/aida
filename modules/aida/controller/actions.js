@@ -5,11 +5,13 @@ importModule("helma.logging", "logging");
    var logger = logging.getLogger(__name__);
 
    this.callAction = function(handler) {
-      res.push();
       handler.call(this);
-      this.content = res.pop();
       try {
-         if (!res.calledRender) this.render();
+         if (!res.calledRender) {
+            this.render();
+         } else {
+            res.write(this.content);
+         }
       } catch(err) {
          if (err instanceof this.templating.NoTemplateFoundError && this.content != null) {
             res.write(this.content);
