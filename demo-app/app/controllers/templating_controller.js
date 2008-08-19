@@ -7,7 +7,7 @@ function TemplatingController() {
       res.writeln("How are you?");
    }
    
-   this.foo_action = function() {
+   foo_action = function() {
       res.write("some buffer");
       context.foo2 = "foooo 2";
       render();
@@ -19,6 +19,10 @@ function TemplatingController() {
    
    this.write_action = function() {
       res.write("using res.write");
+   }
+   
+   actions.foo3 = function() {
+      render({ action : "foo" });
    }
       
 }
