@@ -46,38 +46,40 @@ importModule("helma.logging", "logging");
     * <p>In contrast to Rails, not all public methods in a controller may be invoked as an action method. 
     * Instead you have to add “_action” to the method name, or make it a property of the actions object within 
     * the controller. Because of this fact there is no need for a method “hide_action”.
-    * <pre class=javascript>
-    * importModule(“aida.controller”, “Controller”);
-    * this.__proto__ = Controller;
+    * <pre><code class="javascript">
+    * importFromModule("aida.controller", "*");
     * 
-    * // will handle /controller/index
-    * function index_action() {
-    * 	 render();
-    * }
+    * function DemoController() {
     * 
-    * // will handle POST /controller/index
-    * function index_post_action() {
-    *   // handle post data
-    *   res.redirect("/" + this.getShortName()); // back to index
-    * }
+    *   // will handle /controller/index
+    *   this.index_action = function() {
+    *     render();
+    *   }
+    * 
+    *   // will handle POST /controller/index
+    *   this.index_post_action = function() {
+    *     // handle post data
+    *     res.redirect("/" + this.getShortName()); // back to index
+    *   }
     *
-    * // will handle /controller/index.rss
-    * function index_rss_action() {
-    *   // print this content as rss
-    * }
+    *   // will handle /controller/index.rss
+    *   this.index_rss_action = function() {
+    *     // print this content as rss
+    *   }
     * 
-    * this.actions.json = {
-    *    // will handle /controller/index.json
-    *    index : function() {
-    *      // index as json
-    *    },
-    *    // will handle POST /controller/index.json
-    *    index.post : function() {
-    *      // handle post data (submited as json)    
-    *    }
+    *   this.actions.json = {
+    *     // will handle /controller/index.json
+    *     index : function() {
+    *       // index as json
+    *     },
+    *     // will handle POST /controller/index.json
+    *     index.post : function() {
+    *       // handle post data (submited as json)    
+    *     }
+    *   }
+    *
     * }
-    * 
-    * </pre>
+    * </code></pre>
     * 
     *
     * @param {object} [route]    If route isn't passed to the function, we will fallback to req.route

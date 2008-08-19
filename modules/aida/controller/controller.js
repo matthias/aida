@@ -26,6 +26,8 @@ logging.setConfig(getResource('config/environments/development/log4j.properties'
       c.importHelpers(name)
       return c;
    }
+   
+   this.actions = {};
 
    this.getClassNameFromName = function(name) {
       return name.capitalize() + "Controller";
