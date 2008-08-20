@@ -1,7 +1,12 @@
+importModule('helma.skin'); 
+importModule("helma.logging", "logging");
+ 
+(function () {
+   var logger = logging.getLogger(__name__);
 
-importModule('helma.skin');
-
-function render(templatePath, context) {
-   logger.info("templatePath:"+templatePath+", context:"+context);
-   helma.skin.render(templatePath, context);
-}
+   render = function(templatePath, context) {
+      logger.info("templatePath:"+templatePath+", context:"+context);
+      helma.skin.render(templatePath, context);
+   }
+   
+}).call(this); 

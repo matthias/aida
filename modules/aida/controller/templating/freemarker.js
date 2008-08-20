@@ -1,7 +1,7 @@
 importJar("freemarker.jar")
 
 importModule('helma.logging', 'logging');
-var log = logging.getLogger(__name__);
+var logger = logging.getLogger(__name__);
 
 __shared__ = true;
 
@@ -10,7 +10,6 @@ var cfg = new freemarker.template.Configuration();
 function render(name, context) {
    
 }
-
 
 /*
 package example;

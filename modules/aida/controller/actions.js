@@ -16,7 +16,7 @@ importModule("helma.logging", "logging");
          if (err instanceof this.templating.NoTemplateFoundError && this.content != null) {
             res.write(this.content);
          } else {
-            res.write(err);            
+            res.write(err);
          }
       }
    
