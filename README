@@ -18,7 +18,7 @@ you need to run mysql and create a database.
 
 2. Issue, e.g., the following command from the aida directory:
 
-   aida> java -jar ~/helma/helma-ng/run.jar demo-app/ modules/
+   aida> java -jar ~/helma/helma-ng/run.jar apps/sandbox/ modules/
    # modify the pathes according to your needs
 
 3. Then point your browser to:
