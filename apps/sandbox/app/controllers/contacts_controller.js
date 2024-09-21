@@ -16,7 +16,7 @@ function ContactsController() {
    
    this.index2_action = function() {
       var login = "matthias.platzer@gmail.com";
-      var password = "baseball17";
+      var password = "***";
       var URL = "https://mail.google.com/mail/";
       var LOGIN_URL = "https://www.google.com/accounts/ServiceLoginAuth";
       var LOGIN_REFERER_URL = "https://www.google.com/accounts/ServiceLogin?service=mail&passive=true&rm=false&continue=http%3A%2F%2Fmail.google.com%2Fmail%3Fui%3Dhtml%26zy%3Dl&ltmpl=yj_blanco&ltmplcache=2&hl=en";
